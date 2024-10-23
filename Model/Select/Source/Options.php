@@ -7,18 +7,24 @@ use Magento\Framework\Data\OptionSourceInterface;
 
 class Options implements OptionSourceInterface
 {
+    /** @var SpecialOfferGroupCollectionFactory  */
     protected SpecialOfferGroupCollectionFactory $specialOfferGroupCollectionFactory;
 
+    /**
+     * @param SpecialOfferGroupCollectionFactory $specialOfferGroupCollectionFactory
+     */
     public function __construct(
         SpecialOfferGroupCollectionFactory $specialOfferGroupCollectionFactory
     ) {
         $this->specialOfferGroupCollectionFactory = $specialOfferGroupCollectionFactory;
     }
 
+    /**
+     * @return array[]
+     */
     public function toOptionArray(): array
     {
         $specialOfferCollection = $this->specialOfferGroupCollectionFactory->create();
-
 
         $options = [[
             'label' => __('None'),
