@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="itdn_specialoffer_specialoffer" resource="default" engine="innodb" comment="itdn_specialoffer_specialoffer Table">
+		<column xsi:type="int" name="specialoffer_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="specialoffer_id"/>
+		</constraint>
+		<column name="name" nullable="false" xsi:type="varchar" comment="name" length="255"/>
+		<index referenceId="ITDN_SPECIALOFFER_SPECIALOFFER_NAME" indexType="btree">
+			<column name="name"/>
+		</index>
+		<column name="created_at" nullable="false" xsi:type="datetime" comment="created_at" default="CURRENT_TIMESTAMP"/>
+		<column name="updated_at" nullable="true" xsi:type="datetime" comment="updated_at" default="CURRENT_TIMESTAMP" on_update="true"/>
+	</table>
+	<table name="itdn_specialoffer_specialoffergroup" resource="default" engine="innodb" comment="itdn_specialoffer_specialoffergroup Table">
+		<column xsi:type="int" name="specialoffergroup_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="specialoffergroup_id"/>
+		</constraint>
+		<column name="name" nullable="false" xsi:type="text" comment="name"/>
+	</table>
+	<table name="itdn_specialoffer_specialoffergrouplink" resource="default" engine="innodb" comment="itdn_specialoffer_specialoffergrouplink Table">
+		<column xsi:type="int" name="specialoffergrouplink_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="specialoffergrouplink_id"/>
+		</constraint>
+		<column name="group_id" nullable="false" xsi:type="int" comment="group_id" identity="false"/>
+		<column name="specialoffer_id" nullable="false" xsi:type="int" comment="specialoffer_id" identity="false"/>
+	</table>
+</schema>

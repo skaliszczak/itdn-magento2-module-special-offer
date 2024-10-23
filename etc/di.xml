@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="ITDN\SpecialOffer\Api\SpecialOfferListManagementInterface" type="ITDN\SpecialOffer\Model\SpecialOfferListManagement"/>
+	<preference for="ITDN\SpecialOffer\Api\SpecialOfferManagementInterface" type="ITDN\SpecialOffer\Model\SpecialOfferManagement"/>
+	<preference for="ITDN\SpecialOffer\Api\SpecialOfferRepositoryInterface" type="ITDN\SpecialOffer\Model\SpecialOfferRepository"/>
+	<preference for="ITDN\SpecialOffer\Api\Data\SpecialOfferInterface" type="ITDN\SpecialOffer\Model\SpecialOffer"/>
+	<preference for="ITDN\SpecialOffer\Api\Data\SpecialOfferSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="ITDN\SpecialOffer\Model\ResourceModel\SpecialOffer\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">itdn_specialoffer_specialoffer</argument>
+			<argument name="resourceModel" xsi:type="string">ITDN\SpecialOffer\Model\ResourceModel\SpecialOffer\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="itdn_specialoffer_specialoffer_listing_data_source" xsi:type="string">ITDN\SpecialOffer\Model\ResourceModel\SpecialOffer\Grid\Collection</item>
+				<item name="itdn_specialoffer_specialoffergroup_listing_data_source" xsi:type="string">ITDN\SpecialOffer\Model\ResourceModel\SpecialOfferGroup\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="ITDN\SpecialOffer\Api\SpecialOfferGroupRepositoryInterface" type="ITDN\SpecialOffer\Model\SpecialOfferGroupRepository"/>
+	<preference for="ITDN\SpecialOffer\Api\Data\SpecialOfferGroupInterface" type="ITDN\SpecialOffer\Model\SpecialOfferGroup"/>
+	<preference for="ITDN\SpecialOffer\Api\Data\SpecialOfferGroupSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="ITDN\SpecialOffer\Model\ResourceModel\SpecialOfferGroup\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">itdn_specialoffer_specialoffergroup</argument>
+			<argument name="resourceModel" xsi:type="string">ITDN\SpecialOffer\Model\ResourceModel\SpecialOfferGroup\Collection</argument>
+		</arguments>
+	</virtualType>
+
+    <preference for="ITDN\SpecialOffer\Api\SpecialOfferGroupLinkRepositoryInterface" type="ITDN\SpecialOffer\Model\SpecialOfferGroupLinkRepository"/>
+	<preference for="ITDN\SpecialOffer\Api\Data\SpecialOfferGroupLinkInterface" type="ITDN\SpecialOffer\Model\SpecialOfferGroupLink"/>
+	<preference for="ITDN\SpecialOffer\Api\Data\SpecialOfferGroupLinkSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+
+</config>

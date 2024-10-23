@@ -1,0 +1,22 @@
+{
+    "name": "itdn/module-specialoffer",
+    "description": "Special Offer module",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Sławomir Kaliszczak",
+            "email": "skaliszczak@itdn.pl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ITDN\\SpecialOffer\\": ""
+        }
+    }
+}

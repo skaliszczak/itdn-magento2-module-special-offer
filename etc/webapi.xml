@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/itdn-specialoffer/specialofferlist" method="GET">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferListManagementInterface" method="getSpecialOfferList"/>
+		<resources>
+			<resource ref="anonymous"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffer" method="POST">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferManagementInterface" method="postSpecialOffer"/>
+		<resources>
+			<resource ref="anonymous"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffer" method="DELETE">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferManagementInterface" method="deleteSpecialOffer"/>
+		<resources>
+			<resource ref="anonymous"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffer/search" method="GET">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="ITDN_SpecialOffer::SpecialOffer_view"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffer/:specialofferId" method="GET">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="ITDN_SpecialOffer::SpecialOffer_view"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffer/:specialofferId" method="PUT">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="ITDN_SpecialOffer::SpecialOffer_update"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffer/:specialofferId" method="DELETE">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="ITDN_SpecialOffer::SpecialOffer_delete"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffergroup" method="POST">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferGroupRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="ITDN_SpecialOffer::SpecialOfferGroup_save"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffergroup/search" method="GET">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferGroupRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="ITDN_SpecialOffer::SpecialOfferGroup_view"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffergroup/:specialoffergroupId" method="GET">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferGroupRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="ITDN_SpecialOffer::SpecialOfferGroup_view"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffergroup/:specialoffergroupId" method="PUT">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferGroupRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="ITDN_SpecialOffer::SpecialOfferGroup_update"/>
+		</resources>
+	</route>
+	<route url="/V1/itdn-specialoffer/specialoffergroup/:specialoffergroupId" method="DELETE">
+		<service class="ITDN\SpecialOffer\Api\SpecialOfferGroupRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="ITDN_SpecialOffer::SpecialOfferGroup_delete"/>
+		</resources>
+	</route>
+</routes>
