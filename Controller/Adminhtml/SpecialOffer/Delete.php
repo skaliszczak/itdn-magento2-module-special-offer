@@ -62,12 +62,12 @@ class Delete extends \ITDN\SpecialOffer\Controller\Adminhtml\SpecialOffer
      */
     protected function deleteLinks(mixed $id)
     {
-        $items = $this->specialOfferGroupLinkCollection
+        $links = $this->specialOfferGroupLinkCollection
             ->addFieldToFilter('specialoffer_id', $id)
             ->getItems();
 
-        foreach ($items as $item) {
-            $item->delete();
+        foreach ($links as $link) {
+            $link->delete();
         }
     }
 }
